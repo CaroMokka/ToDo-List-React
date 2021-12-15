@@ -1,13 +1,129 @@
 @import "~bootstrap/scss/bootstrap.scss";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    
+    background-image: url("https://i.pinimg.com/originals/b9/0a/71/b90a716ce19919ed92f1de514ec41dd2.jpg" );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+body:before{
+    content: " ";
+    position: absolute;
+    background-color: black;
+    opacity: 0.3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#app{
+    color: white;
+    background: rgba(255,255,255,0.1);
+    width: 500px;
+    height: 800px;
+    border-radius: 10px;
+    backdrop-filter: blur(50px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.6);
+    border: 0.5px solid rgba(225, 225, 225, 0.2);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    z-index: 1;
+}
+h1{
+    
+    font-size: 40px;
+    width: 100%;
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 2rem;
 
-/* 
+}
+.inputUp {
+    width: 80%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    text-align: center;
+    border-top: 1px solid rgba(225, 225, 225, 0.4);
+    border-radius: 10px;
+    box-shadow: 0px 10px 21px rgba(0, 0, 0, 0.5);
+    outline: none;
+   
+    
+}
+form{
+    margin-bottom: 2rem;
+}
 
-    You can write your own styles here...
+.btn {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    width: 50px;
+    border-radius: 10px;
+    border-top: 1px solid rgba(225, 225, 225, 0.4);
+    box-shadow: 0px 10px 21px rgba(0, 0, 0, 0.4);
+    margin-left: 1rem;
+    outline: none;
     
     
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
+.btn:focus {
+    box-shadow: none;
+  }
 
-*/
+
+.btn-return{
+    color: white;
+    padding: 0.5rem;
+    margin-right: 10px;
+}
+
+.task{
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    border-top: 1px solid rgba(225, 225, 225, 0.4);
+    border-radius: 10px;
+    box-shadow: 0px 10px 21px rgba(0, 0, 0, 0.3);
+    margin: 0 1rem 1rem 1rem;
+    padding-left: 10px;
+   
+}
+.trash{
+    color: white;
+    padding: 0.5rem;
+    margin-right: 10px;
+}
+.pen{
+    color: white;
+    padding: 0.5rem;
+    margin-right: 10px;
+}
+.taskName{
+    width: 80%;
+    padding: 0.5rem;
+}
+.inputDown{
+    width: 80%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    text-align: center;
+    border-top: 1px solid rgba(225, 225, 225, 0.4);
+    border-radius: 10px;
+    box-shadow: 0px 10px 21px rgba(0, 0, 0, 0.5);
+    outline: none;
+    
+   
+}
+

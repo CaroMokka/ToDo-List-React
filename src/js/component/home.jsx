@@ -1,26 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import ToDoList from "./to-do-list.jsx";
+import Task from "./task.jsx";
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
+const AppToDoList = () => {
+	const [taskList, setTaskList] = useState([]);
+
+	const taskNew = task => {
+		setTaskList([task, ...taskList]);
+	};
+
+	const deleteTask = id => {
+		const filterlist = taskList.filter((e, key) => key !== id);
+		setTaskList(filterlist);
+	};
+
+	const upgradeTask = (id, task) => {
+		const upgradeList = taskList.map((e, key) => {
+			if (key === id) {
+				e = task;
+			}
+			return e;
+		});
+
+		setTaskList(upgradeList);
+	};
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="app">
+			<ToDoList taskNew={taskNew} />
+			<div>
+				{taskList.map((e, key) => (
+					<Task
+						key={key}
+						task={e}
+						deleteTask={deleteTask}
+						id={key}
+						edit={upgradeTask}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };
 
-export default Home;
+export default AppToDoList;
